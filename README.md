@@ -36,7 +36,7 @@ The project follows a modular, service-oriented architecture:
 
 ## 📊 Visual Workflow
 
-![System Workflow](assets/workflow.png)
+![System Workflow](assets/workflow.svg)
 
 ## 🛠 Setup & Installation
 
