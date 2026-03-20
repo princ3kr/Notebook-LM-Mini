@@ -36,25 +36,7 @@ The project follows a modular, service-oriented architecture:
 
 ## 📊 Visual Workflow
 
-```mermaid
-graph TD
-    Start((Start)) --> intent_parser[Intent Parser]
-    intent_parser --> planner[Path Planner]
-    planner --> diagnoser_generate[Generate Question]
-    diagnoser_generate --> human{Wait for Student}
-    human --> diagnoser_evaluate[Evaluate Answer]
-    diagnoser_evaluate --> tutor_respond[Tutor Response]
-    
-    subgraph Decision Loop
-        tutor_respond -- "is_transition: false" --> diagnoser_generate
-    end
-    
-    tutor_respond -- "is_transition: true / goal reached" --> End((End))
-
-    style Start fill:#f9f,stroke:#333,stroke-width:2px
-    style End fill:#f9f,stroke:#333,stroke-width:2px
-    style human fill:#fff4dd,stroke:#d4a017,stroke-width:2px
-```
+![System Workflow](assets/workflow.png)
 
 ## 🛠 Setup & Installation
 
