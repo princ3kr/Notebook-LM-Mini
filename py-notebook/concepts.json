@@ -1,0 +1,652 @@
+[
+  {
+    "topic": "Differential Amplifier",
+    "chunk_type": "theory",
+    "description": "A differential amplifier is a type of amplifier that amplifies the difference between two input signals, providing high gain and high input impedance. This enables the creation of various circuits such as voltage amplitude changers, oscillators, and filter circuits, which are crucial in many electronic systems.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Single-Ended Input",
+    "chunk_type": "theory",
+    "description": "Single-ended input operation occurs when the input signal is connected to one input with the other input connected to ground, resulting in an output with the same or opposite polarity as the applied input signal. This operation enables the amplification of input signals with a single input connection, simplifying circuit design and reducing component count.",
+    "equations": null,
+    "subtopics": [],
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Differential Input",
+    "chunk_type": "theory",
+    "description": "A differential input is a type of input where signals are applied between two input terminals, resulting in an amplified output in phase with the difference signal. This enables the operational amplifier to amplify the difference between two separate signals, allowing for a wide range of applications in signal processing and amplification.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Double-Ended Output",
+    "chunk_type": "theory",
+    "description": "A double-ended output is a type of operation where an op-amp produces two amplified outputs of opposite polarity, resulting in a difference output signal that is twice as large as either individual output. This type of operation enables the creation of a floating signal, where neither output terminal is the ground reference terminal, and is useful in fully differential operations.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Basics"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Rejection",
+    "chunk_type": "theory",
+    "description": "Common-mode operation occurs when the same input signals are applied to both inputs of an operational amplifier, resulting in equal amplification and opposite-polarity signals at the output that cancel each other. This operation is crucial as it enables the rejection of common-mode noise and interference, allowing the amplifier to focus on the differential signal and provide a more accurate output.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier",
+      "Differential Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Rejection",
+    "chunk_type": "theory",
+    "description": "Common-mode rejection is a feature of differential connections where signals common to both inputs are only slightly amplified, while difference signals are highly amplified. This operating feature enables the attenuation of unwanted input noise that is generally common to both inputs, providing an amplified output of the difference signal.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Differential Connection"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Rejection",
+    "chunk_type": "theory",
+    "description": "Common-mode rejection is the ratio of the difference gain to the common gain in a differential amplifier, which allows the amplifier to reject common-mode signals and amplify differential signals. This feature is crucial in many applications, such as instrumentation and communication systems, where it enables the extraction of weak signals from noise and interference.",
+    "equations": null,
+    "subtopics": [
+      "Single-Ended Operation",
+      "Double-Ended Operation",
+      "Common-Mode Operation"
+    ],
+    "prerequisites": [
+      "Differential Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Emitter Bias",
+    "chunk_type": "theory",
+    "description": "The common-emitter bias is a technique used to establish a fixed dc operating point for a transistor, where the base voltage is set to a fixed value, typically 0 V, and the emitter voltage is set to a value that allows the transistor to operate in the active region. This biasing technique is crucial in differential amplifier circuits, as it enables the amplification of small ac signals while maintaining a stable dc operating point, resulting in a reliable and efficient amplifier operation.",
+    "equations": null,
+    "subtopics": [],
+    "prerequisites": [
+      "Transistor Operation",
+      "Differential Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Single-Ended AC Voltage Gain",
+    "chunk_type": "derivation",
+    "description": "The single-ended AC voltage gain is a measure of the ratio of the output voltage to the input voltage in a differential amplifier, calculated by applying a signal to one input with the other connected to ground. This concept is crucial in understanding the behavior of differential amplifiers in AC operation, enabling the design of amplifiers with specific gain requirements.",
+    "equations": [
+      {
+        "name": "Single-Ended AC Voltage Gain Equation",
+        "latex": "|\\frac{V_o}{V_i}| = \\frac{R_C}{r_e}",
+        "context": "AC analysis of differential amplifier"
+      }
+    ],
+    "subtopics": [
+      "AC Equivalent Circuit",
+      "Kirchhoff Voltage Loop Equation"
+    ],
+    "prerequisites": [
+      "Differential Amplifier",
+      "AC Equivalent Circuit"
+    ],
+    "difficulty_score": 4.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Gain",
+    "chunk_type": "theory",
+    "description": "Common-mode gain refers to the amplification of a signal that is common to both inputs of a differential amplifier, and it is desirable for this gain to be as small as possible to minimize interference. The common-mode gain is a critical parameter in operational amplifier design, as it enables the rejection of common-mode noise and interference, thereby improving the overall signal-to-noise ratio of the amplifier.",
+    "equations": [
+      {
+        "name": "Common-Mode Gain Formula",
+        "latex": "|A_{CM}| = |\\frac{v_{out}}{v_{in}}|",
+        "context": "Common-mode gain calculation"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Differential Amplifier"
+    ],
+    "difficulty_score": 4.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Constant-Current Source",
+    "chunk_type": "theory",
+    "description": "A constant-current source is a circuit that provides a high impedance path to ground, allowing for a large ac value of resistance to be obtained, which improves the common-mode rejection ability of a differential amplifier. This is achieved by using a constant-current source circuit in parallel with the common emitter to ac ground, resulting in a much larger ac impedance for RE.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Differential Amplifier",
+      "Common-Mode Rejection"
+    ],
+    "difficulty_score": 4.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "CMOS Circuit",
+    "chunk_type": "theory",
+    "description": "A CMOS circuit is a type of circuit that uses both n-channel and p-channel enhancement MOSFET transistors, with the input applied to both gates and the output taken from the connected drains. This complementary MOSFET circuit enables the creation of low-power digital circuits with high noise immunity and is widely used in digital circuitry.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "MOSFET Transistors"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "MOS Threshold Voltage",
+    "chunk_type": "theory",
+    "description": "The MOS threshold voltage is the minimum voltage required between the gate and source for the MOSFET to conduct current, and it determines the point at which the device turns on. Understanding the MOS threshold voltage is crucial for designing and analyzing digital circuits, such as CMOS inverters, where it directly affects the switching behavior of the transistors.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "MOSFET Basics"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "pMOS On/Off Operation",
+    "chunk_type": "theory",
+    "description": "The pMOS transistor operates by switching on when the input voltage exceeds the threshold voltage, allowing drain current to flow, and switching off when the input voltage is below the threshold voltage, resulting in no drain current present. This on/off operation enables the creation of digital logic gates and other digital circuits that rely on binary voltage levels to represent information.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "MOS Transistor Biasing",
+    "chunk_type": "theory",
+    "description": "When 0 V is applied as input to the CMOS circuit, it provides 0 V to both n MOS and p MOS gates, resulting in the n MOS transistor turning off and the p MOS transistor turning on. This biasing mechanism enables the CMOS circuit to produce a stable output voltage, in this case -5 V, due to the difference in gate-source voltages between the two transistors.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "MOS Transistor Operation",
+      "CMOS Circuit"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "CMOS Differential Amplifier",
+    "chunk_type": "theory",
+    "description": "A CMOS differential amplifier is a type of amplifier that uses complementary MOSFET transistors to provide a high input impedance and low power dissipation, making it suitable for battery operation. This type of amplifier is particularly useful in applications where low power consumption is critical, as it enables the design of energy-efficient circuits with high performance.",
+    "equations": null,
+    "subtopics": [
+      "BiFET Circuit",
+      "BiMOS Circuit"
+    ],
+    "prerequisites": [
+      "MOSFET Transistors",
+      "Differential Amplifier"
+    ],
+    "difficulty_score": 4.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Op-Amp Gain",
+    "chunk_type": "theory",
+    "description": "An operational amplifier is a high-gain amplifier with very high input impedance and low output impedance, where the output voltage is the amplifier gain times the input signal. The ideal op-amp circuit has infinite input impedance, zero output impedance, and infinite voltage gain, enabling it to be used in a wide range of applications.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Difference Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Inverting Amplifier",
+    "chunk_type": "theory",
+    "description": "An inverting amplifier is a type of op-amp circuit where the input signal is applied to the minus input and the output is connected back to the same minus input through a feedback resistor, resulting in an output that is opposite in phase to the input signal. This configuration enables the op-amp to operate as a constant-gain multiplier, where the gain is dependent on the values of the input and feedback resistors, allowing for precise control over the output voltage.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp",
+      "Feedback Resistor"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Unity Gain",
+    "chunk_type": "theory",
+    "description": "Unity gain is a condition where the voltage gain of an operational amplifier circuit is exactly 1, achieved when the feedback resistor Rf is equal to the input resistor R1, resulting in a 180\u00b0 phase inversion. This enables the circuit to provide a buffered output with no amplitude change, making it useful for impedance matching and signal isolation applications.",
+    "equations": [
+      {
+        "name": "Unity Gain Equation",
+        "latex": "R_{Voltage\\ gain} = -\\frac{R_f}{R_1} = -1",
+        "context": "Unity gain condition"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Constant-Magnitude Gain",
+    "chunk_type": "theory",
+    "description": "The constant-magnitude gain is a property of an operational amplifier circuit where the overall gain is a constant value determined by the ratio of feedback resistor Rf to input resistor R1. This property enables the design of amplifiers with precise and stable gain, which is crucial in various applications such as audio equipment and instrumentation systems.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier",
+      "Voltage Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Virtual Ground",
+    "chunk_type": "theory",
+    "description": "The virtual ground concept is a theoretical idea that suggests the input voltage of an operational amplifier is nearly zero due to the high gain of the amplifier, allowing for a simplified analysis of the circuit. This concept enables a simple solution to determine the overall voltage gain of the circuit by treating the input as a virtual short-circuit to ground, allowing current to flow only through the resistors in the circuit.",
+    "equations": [
+      {
+        "name": "Virtual Ground Current Equation",
+        "latex": "I = \\frac{V_i - V_1}{R_1}",
+        "context": "Virtual ground concept"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Operational Amplifier Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Inverting Amplifier Gain",
+    "chunk_type": "theory",
+    "description": "The inverting amplifier gain is determined by the ratio of the feedback resistor to the input resistor, allowing for a fixed or constant gain to be achieved. This gain enables the amplification of weak signals while maintaining a stable output, making it a crucial component in various electronic circuits.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Noninverting Amplifier",
+    "chunk_type": "theory",
+    "description": "A noninverting amplifier is a type of op-amp circuit that provides a constant voltage gain, where the input voltage is amplified without inversion, and the voltage gain is determined by the ratio of the feedback resistor to the input resistor. This circuit enables the amplification of weak signals while maintaining high input impedance and low output impedance, making it useful in a wide range of applications.",
+    "equations": [
+      {
+        "name": "Noninverting Amplifier Gain",
+        "latex": "(1 + R_f/R_1)",
+        "context": "Voltage gain of the noninverting amplifier"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Op-Amp Basics",
+      "Voltage Divider"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Unity Follower",
+    "chunk_type": "theory",
+    "description": "The unity-follower circuit provides a gain of unity with no polarity or phase reversal, operating like an emitter- or source-follower circuit except that the gain is exactly unity. This circuit enables the transfer of a signal from one stage to another without any amplification or attenuation, while maintaining the same polarity and magnitude as the input.",
+    "equations": null,
+    "subtopics": [],
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Summing Amplifier",
+    "chunk_type": "theory",
+    "description": "A summing amplifier is a type of op-amp circuit that algebraically sums multiple input voltages, each multiplied by a constant-gain factor, to produce an output voltage. This enables the combination of multiple signals into a single output, which is useful in a wide range of applications, including audio mixing and signal processing.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Circuit Analysis"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Integrator Circuit",
+    "chunk_type": "theory",
+    "description": "An integrator circuit is a type of operational amplifier circuit that uses a capacitor as the feedback component, allowing it to integrate the input signal over time. The integrator circuit enables the solution of differential equations and provides the ability to electrically solve analogs of physical system operation, making it a crucial component in analog computers.",
+    "equations": [
+      {
+        "name": "Integrator Equation",
+        "latex": "-\\frac{1}{RC} \\int V_i dt",
+        "context": "Integrator circuit equation"
+      }
+    ],
+    "subtopics": [
+      "Summing Integrator"
+    ],
+    "prerequisites": [
+      "Operational Amplifier",
+      "Capacitor"
+    ],
+    "difficulty_score": 4.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Differentiator Circuit",
+    "chunk_type": "theory",
+    "description": "A differentiator circuit is a type of operational amplifier circuit that provides a useful operation by differentiating the input signal, with the resulting relation being dependent on the scale factor RC. The differentiator circuit enables the extraction of the derivative of an input signal, which is useful in various applications such as signal processing and control systems.",
+    "equations": [
+      {
+        "name": "Differentiator Equation",
+        "latex": "V_{out} = -RC \\frac{dV_{in}}{dt}",
+        "context": "Differentiator circuit"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Operational Amplifier",
+      "RC Circuit"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Input Offset Current",
+    "chunk_type": "theory",
+    "description": "Input offset current is a parameter that represents the difference in dc bias currents at both inputs of an op-amp, causing an output offset voltage. This concept is crucial in understanding the limitations and specifications of op-amps, as it affects the overall accuracy and performance of the circuit.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-amp basics",
+      "DC bias currents"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Gain Roll-off",
+    "chunk_type": "theory",
+    "description": "Gain roll-off refers to the reduction in open-loop gain of an op-amp as frequency increases, typically at a rate of 20 dB per decade, which is a result of internal compensation circuitry. This reduction in gain is crucial for ensuring stable operation of the op-amp, as it prevents oscillations due to positive feedback and allows for more precise control over the circuit's voltage gain.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Open-Loop Gain",
+      "Positive Feedback"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Slew Rate",
+    "chunk_type": "theory",
+    "description": "The slew rate is a parameter that specifies the maximum rate of change of the output voltage when driven by a large step-input signal, typically measured in volts per microsecond. It is crucial in determining the maximum closed-loop voltage gain that can be used without causing signal clipping or distortion, and thus enables the design of amplifiers that can handle varying signals accurately.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier",
+      "Closed-Loop Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Slew Rate Limitation",
+    "chunk_type": "theory",
+    "description": "Slew rate limitation is a phenomenon where the rate of change of the output voltage of an op-amp is limited by its slew rate parameter, preventing distortion at high frequencies. This limitation is crucial in op-amp circuit design, as it determines the maximum frequency at which the op-amp can operate without distorting the output signal.",
+    "equations": [
+      {
+        "name": "Slew Rate Limitation Equation",
+        "latex": "\\frac{dV_o}{dt} < SR",
+        "context": "Slew rate limitation equation"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Op-Amp Bandwidth",
+      "Slew Rate"
+    ],
+    "difficulty_score": 4.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Power Dissipation",
+    "chunk_type": "numerical",
+    "description": "Power dissipation in an operational amplifier refers to the amount of power that the device can safely handle without being damaged, and it is typically determined by the device's internal structure and packaging. Understanding power dissipation is crucial in designing and operating electronic circuits, as excessive power dissipation can lead to device failure or malfunction.",
+    "equations": [
+      {
+        "name": "Power Equation",
+        "latex": "P = VI",
+        "context": "Power calculation"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Ohm's Law",
+      "Electric Power"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Input Offset Voltage",
+    "chunk_type": "theory",
+    "description": "The input offset voltage is a parameter that represents the voltage difference between the two input terminals of an op-amp, typically 1 mV but can go as high as 6 mV. This parameter is crucial in determining the output offset voltage of an op-amp circuit, which can affect the overall performance and accuracy of the circuit.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Basics",
+      "Circuit Analysis"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Unity Gain Bandwidth",
+    "chunk_type": "theory",
+    "description": "Unity gain bandwidth is the frequency at which the gain of an op-amp drops to 1, indicating the point at which the op-amp can no longer amplify the signal effectively. Understanding unity gain bandwidth is crucial in designing and analyzing op-amp circuits, as it determines the maximum frequency at which the op-amp can operate accurately.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Rejection",
+    "chunk_type": "theory",
+    "description": "Common-mode rejection is a feature of differential circuits, such as those in op-amps, where the circuit amplifies signals that are opposite at the two inputs while slightly amplifying signals common to both inputs. This rejection is quantified by the common-mode rejection ratio (CMRR), which enables the circuit to minimize unwanted common-mode signals and amplify only the desired differential signals.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Differential Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Differential Signal",
+    "chunk_type": "theory",
+    "description": "A differential signal is the difference between two input signals applied to an op-amp, resulting in a single output signal that represents the difference between the two inputs. This differential signal is crucial in operational amplifiers as it enables the rejection of common-mode noise and the amplification of the difference between the two input signals.",
+    "equations": [
+      {
+        "name": "Differential Signal Equation",
+        "latex": "V_d = V_{i1} - V_{i2}",
+        "context": "Differential input signals"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common Mode Signal",
+    "chunk_type": "theory",
+    "description": "The common mode signal is defined as the average of the sum of the two input signals when they are the same, allowing for the identification of a common signal element due to the two inputs. This concept is crucial in understanding the behavior of operational amplifiers and their ability to reject common mode noise, enabling the design of more robust and reliable circuits.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Output Voltage Expression",
+    "chunk_type": "theory",
+    "description": "The output voltage of an op-amp can be expressed as a combination of in-phase and out-of-phase components, resulting in a difference voltage and a common voltage. This expression enables the analysis of op-amp behavior in various applications, allowing for the optimization of circuit design and performance.",
+    "equations": [
+      {
+        "name": "Output Voltage Formula",
+        "latex": "",
+        "context": "Output voltage expression"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Differential Gain",
+      "Common-Mode Gain"
+    ],
+    "difficulty_score": 4.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Differential Gain",
+    "chunk_type": "theory",
+    "description": "Differential gain is the gain of an operational amplifier when opposite-polarity inputs are applied, resulting in a difference voltage that is twice the input signal. This concept enables the op-amp to amplify the difference between two input signals while rejecting any common-mode signal, which is essential for many applications such as audio processing and instrumentation.",
+    "equations": [
+      {
+        "name": "Difference Voltage Equation",
+        "latex": "Vd = Vi1 - Vi2 = Vs - (-Vs) = 2Vs",
+        "context": "op-amp inputs"
+      },
+      {
+        "name": "Common Voltage Equation",
+        "latex": "Vc = 1/2 * (Vi1 + Vi2) = 1/2 * (Vs + (-Vs)) = 0",
+        "context": "op-amp inputs"
+      },
+      {
+        "name": "Output Voltage Equation",
+        "latex": "Vo = AdVd + AcVc = Ad * 2Vs + 0 = 2AdVs",
+        "context": "op-amp output"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Operational Amplifier",
+      "Common-Mode Rejection"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Operation",
+    "chunk_type": "theory",
+    "description": "Common-mode operation occurs when the same-polarity inputs are applied to an op-amp, resulting in a difference voltage of zero and a common voltage equal to the input signal. This enables the op-amp to produce an output voltage that is the common-mode gain times the input signal, which is essential for understanding op-amp behavior in various applications.",
+    "equations": [
+      {
+        "name": "Difference Voltage Equation",
+        "latex": "Vd = Vi1 - Vi2 = Vs - Vs = 0",
+        "context": "op-amp input signals"
+      },
+      {
+        "name": "Common Voltage Equation",
+        "latex": "Vc = \\frac{1}{2}(Vi1 + Vi2) = \\frac{1}{2}(Vs + Vs) = Vs",
+        "context": "op-amp input signals"
+      },
+      {
+        "name": "Output Voltage Equation",
+        "latex": "Vo = AdVd + AcVc = Ad(0) + AcVs = AcVs",
+        "context": "op-amp output signal"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Op-Amp Basics",
+      "Common-Mode Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Rejection",
+    "chunk_type": "theory",
+    "description": "Common-mode rejection is a technique used to measure the differential gain Ad and common-mode gain Ac in op-amp circuits by setting specific input voltages to isolate and measure each gain component. This technique enables the measurement of Ad and Ac, which is crucial for understanding the operational amplifier's behavior and performance in various applications.",
+    "equations": [
+      {
+        "name": "Differential Gain Equation",
+        "latex": "Vo = AdVd + AcVc",
+        "context": "Op-amp circuit analysis"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Op-Amp Circuits",
+      "Differential Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Common-Mode Rejection Ratio",
+    "chunk_type": "theory",
+    "description": "The common-mode rejection ratio (CMRR) is a measure of an operational amplifier's ability to reject common-mode signals, defined as the ratio of differential gain to common-mode gain, and it is often expressed in logarithmic terms in decibels. A high CMRR is desirable as it enables the amplifier to effectively reject common-mode noise and amplify differential signals, resulting in a cleaner output signal.",
+    "equations": [
+      {
+        "name": "CMRR Definition",
+        "latex": "CMRR = \\frac{A_d}{A_c}",
+        "context": "CMRR definition"
+      }
+    ],
+    "subtopics": [
+      "CMRR Calculation",
+      "CMRR Importance"
+    ],
+    "prerequisites": [
+      "Differential Gain",
+      "Common-Mode Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  },
+  {
+    "topic": "Virtual Ground",
+    "chunk_type": "theory",
+    "description": "Virtual ground is a concept where the differential input voltage between the plus and minus inputs of an op-amp is nearly zero due to the high voltage gain, resulting in a voltage division that approaches zero. This concept enables the analysis and design of op-amp circuits by simplifying the input voltage conditions, allowing for more accurate calculations and predictions of circuit behavior.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Differential Input",
+      "Voltage Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers"
+  }
+]

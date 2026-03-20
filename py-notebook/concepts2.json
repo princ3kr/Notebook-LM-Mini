@@ -1,0 +1,249 @@
+[
+  {
+    "topic": "Inverting Amplifier",
+    "chunk_type": "theory",
+    "description": "An inverting amplifier is a type of op-amp circuit that provides a precise gain or amplification by inverting the input signal, with the resulting gain being determined by the ratio of resistances in the circuit. This type of amplifier is crucial in various applications as it enables the amplification of weak signals while maintaining a high degree of stability and accuracy.",
+    "equations": null,
+    "subtopics": [],
+    "prerequisites": [
+      "Op-Amp Basics"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Multistage Gain",
+    "chunk_type": "theory",
+    "description": "A multistage gain is achieved by connecting multiple amplifier stages in series, where the overall gain is the product of the individual stage gains. This enables the creation of high-gain amplifiers with improved stability and noise reduction, which is crucial in various applications such as audio equipment and medical devices.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Gain",
+      "Inverting Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Summing Amplifier",
+    "chunk_type": "theory",
+    "description": "A summing amplifier is a type of op-amp circuit where the output voltage is the sum of the input voltages, each multiplied by a different gain, allowing for the combination of multiple signals into one output signal. This enables the creation of complex waveforms and signal processing systems by summing multiple input signals with varying amplitudes and frequencies.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Basics",
+      "Voltage Gain"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Voltage Subtraction",
+    "chunk_type": "theory",
+    "description": "Voltage subtraction is a technique used to find the difference between two input signals using op-amp stages, which can be achieved through various circuit configurations. This technique enables the creation of circuits that can perform arithmetic operations on input signals, which is crucial in various applications such as signal processing and control systems.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Basics",
+      "Superposition"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Voltage Buffer Circuit",
+    "chunk_type": "theory",
+    "description": "A voltage buffer circuit is a type of amplifier that provides isolation between an input signal and a load, with unity voltage gain and no phase or polarity inversion, and it has very high input impedance and low output impedance. This circuit is useful for providing multiple outputs from a single input signal without affecting each other, and it is commonly used in instrumentation circuits.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Voltage-Controlled Voltage Source",
+    "chunk_type": "theory",
+    "description": "A voltage-controlled voltage source is a circuit where the output voltage is dependent on an input voltage, scaled by a factor k, and can be implemented using an op-amp. This type of circuit enables the creation of amplifiers and other voltage-controlled devices, allowing for precise control over output voltages based on input signals.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Op-Amp Basics"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Voltage-Controlled Current Source",
+    "chunk_type": "theory",
+    "description": "A voltage-controlled current source is a circuit that provides an output current controlled by an input voltage, with the output current dependent on the input voltage. This enables the creation of practical circuits, such as the one shown in Fig. 11.19, where the output current through a load resistor can be controlled by the input voltage.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Current-Controlled Voltage Source",
+    "chunk_type": "theory",
+    "description": "A current-controlled voltage source is a circuit where the output voltage is dependent on the input current, and it can be built using an op-amp. This circuit enables the control of voltage based on current, which is useful in various applications such as amplifiers and filters.",
+    "equations": [
+      {
+        "name": "Current-Controlled Voltage Source Equation",
+        "latex": "Vo = -I_1 RL = kI_1",
+        "context": "Output voltage of a current-controlled voltage source"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Op-Amp Basics"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Current-Controlled Current Source",
+    "chunk_type": "theory",
+    "description": "A current-controlled current source is a circuit that provides an output current dependent on an input current, allowing for the control of current flow in a circuit. This type of circuit is crucial in various applications, including instrumentation and signal processing, as it enables the precise regulation of current levels.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifiers Applications"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Inverting Amplifier",
+    "chunk_type": "numerical",
+    "description": "An inverting amplifier is a type of operational amplifier circuit that inverts the input signal and amplifies it, with the output voltage being proportional to the negative of the input voltage. This enables the creation of amplifiers with specific gain values and is crucial in various applications such as audio equipment and sensor interfaces.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Instrumentation Circuits",
+    "chunk_type": "theory",
+    "description": "Instrumentation circuits are electronic circuits that use op-amps to measure various physical parameters such as voltage, current, and temperature. These circuits enable precise and accurate measurements in various fields, including industrial control, medical devices, and scientific research.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [],
+    "difficulty_score": 2.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Op-Amp Millivoltmeter",
+    "chunk_type": "theory",
+    "description": "An op-amp millivoltmeter is a circuit that utilizes an operational amplifier to provide a high input impedance and accurate voltage measurement, with the meter reading representing millivolts of signal at the circuit input. The op-amp millivoltmeter enables precise measurement of low dc voltages by leveraging the op-amp's high gain and accuracy, allowing for a wide range of scale factors dependent on resistor values and accuracy.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier",
+      "Voltage Measurement"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "ac Millivoltmeter",
+    "chunk_type": "theory",
+    "description": "The ac millivoltmeter is an instrumentation circuit that measures ac signals, with a transfer function that allows for full-scale deflection at an ac input voltage of 10 mV. This enables precise measurement of ac signals in millivolt units, with the meter indication providing a direct reading of the input voltage.",
+    "equations": [
+      {
+        "name": "ac Millivoltmeter Transfer Function",
+        "latex": "H(s) = \\frac{V_o}{V_i}",
+        "context": "ac millivoltmeter transfer function"
+      }
+    ],
+    "subtopics": [],
+    "prerequisites": [
+      "Instrumentation Circuits",
+      "Operational Amplifier Basics"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Display Driver",
+    "chunk_type": "theory",
+    "description": "A display driver is a type of op-amp circuit that controls the current flow to a display device, such as a lamp or LED, based on the input voltage levels. This enables the op-amp to drive high-current devices, such as lamps or LEDs, by using a transistor to amplify the output current, allowing for a wide range of display applications.",
+    "equations": null,
+    "subtopics": [
+      "Lamp Driver",
+      "LED Driver"
+    ],
+    "prerequisites": [
+      "Op-Amp Saturation",
+      "Transistor Amplification"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Instrumentation Amplifier",
+    "chunk_type": "theory",
+    "description": "An instrumentation amplifier is a circuit that provides an output based on the difference between two inputs, scaled by a factor that can be adjusted using a potentiometer. This enables the precise measurement and amplification of small differential signals in the presence of large common-mode noise, which is crucial in various applications such as medical devices and industrial control systems.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier",
+      "Differential Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "First-Order Low-Pass Filter",
+    "chunk_type": "theory",
+    "description": "A first-order low-pass filter is a circuit that uses a single resistor and capacitor to filter out high-frequency signals, with a practical slope of 20 dB per decade. This type of filter is important because it enables the removal of high-frequency noise from signals, which is crucial in many electronic applications.",
+    "equations": [
+      {
+        "name": "Cutoff Frequency Equation",
+        "latex": "f_{c} = \\frac{1}{2\\pi R_{1}C_{1}}",
+        "context": "First-order low-pass filter cutoff frequency"
+      }
+    ],
+    "subtopics": [
+      "First-Order Filter Response",
+      "Cutoff Frequency Calculation"
+    ],
+    "prerequisites": [
+      "Operational Amplifier Basics",
+      "RC Circuits"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Bandpass Filter",
+    "chunk_type": "theory",
+    "description": "A bandpass filter is a circuit that allows a specific range of frequencies to pass through while attenuating all other frequencies, achieved by combining a high-pass filter and a low-pass filter. This enables the selection of specific frequency bands for amplification or processing, which is crucial in various applications such as audio processing and communication systems.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "High-Pass Filter",
+      "Low-Pass Filter"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  },
+  {
+    "topic": "Noninverting Amplifier",
+    "chunk_type": "theory",
+    "description": "A noninverting constant-gain multiplier is a type of amplifier that produces an output voltage which is a scaled version of the input voltage, with the scaling factor determined by the ratio of resistors in the circuit. This enables the precise amplification of signals without inverting the signal polarity, which is crucial in many applications such as audio equipment and medical devices.",
+    "equations": null,
+    "subtopics": null,
+    "prerequisites": [
+      "Operational Amplifier"
+    ],
+    "difficulty_score": 3.0,
+    "parent_unit": "Operational Amplifiers Applications"
+  }
+]

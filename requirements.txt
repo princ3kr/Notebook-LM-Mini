@@ -1,0 +1,33 @@
+# Core
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+notebook
+streamlit
+
+# Database
+neo4j
+
+# LLM & Agents
+langchain
+langgraph
+langchain-core
+langchain-groq
+langchain_community
+
+# Embeddings & ML
+sentence-transformers
+torch
+scikit-learn
+numpy
+networkx
+
+# Utilities
+httpx
+pymupdf4llm
+fuzzywuzzy
+python-levenshtein
+langchain-text-splitters
+tinydb
+

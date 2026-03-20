@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# Secrets
+.env
+.env.example
+
+# Application Data
+data/
+sessions/
+student_sessions.json
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
