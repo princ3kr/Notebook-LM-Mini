@@ -95,8 +95,17 @@ with tab1:
                 config = {"configurable": {"thread_id": thread_id}}
                 
                 state = tutor.get_state(config)
-                
-                if state.values: # Already in a session
+                # Don't send the literal placeholder as a quiz answer while interrupted.
+                _ui = user_input.strip()
+                if _ui.lower() in ("i want to learn about...", "i want to learn about"):
+                    user_input = ""
+
+                if not state.values and not (user_input or "").strip():
+                    st.warning("Please type a topic, e.g. **I want to learn about transistor biasing**.")
+                    st.stop()
+
+                # Check if the state exists and has a next step (not at END)
+                if state.values and state.next: # Already in an active session
                     result = tutor.invoke(Command(resume=user_input), config=config)
                 else: # Start fresh
                     initial_state = GraphState(
@@ -114,7 +123,8 @@ with tab1:
                         current_path_index=0,
                         current_concept_index=0,
                         final_response="",
-                        is_transition=False
+                        is_transition=False,
+                        phase="quiz",
                     )
                     result = tutor.invoke(initial_state, config=config)
                 

@@ -16,3 +16,4 @@ class GraphState(TypedDict):
     current_concept_index: int
     final_response: str
     is_transition: bool
+    phase: str

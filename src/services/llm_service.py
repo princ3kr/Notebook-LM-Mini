@@ -12,10 +12,10 @@ class LLMService:
         self.llm = ChatGroq(
             model="llama-3.3-70b-versatile",
             temperature=0,
-            max_tokens=500,
+            max_tokens=1000,
             api_key=self.api_key
         )
-        self.structured_llm = self.llm.with_structured_output(Concept)
+        self.structured_llm = self.llm.with_structured_output(Concept, method="json_mode")
 
     def extract_concept(self, chunk_content: str, section: str = "", parent_unit: str = "Technical Document") -> Concept:
         prompt = ChatPromptTemplate.from_messages([
@@ -59,7 +59,9 @@ SUBTOPICS:
 - Only specific sub-components explicitly mentioned in this chunk.
 
 CHUNK TYPE:
-- REQUIRED. Must be exactly one of: 'theory', 'derivation', 'numerical'"""),
+- REQUIRED. Must be exactly one of: 'theory', 'derivation', 'numerical'
+            
+            Return ONLY a valid JSON object matching the requested schema."""),
             ("human", """Section: {section}
 Parent Unit: {parent_unit}
 

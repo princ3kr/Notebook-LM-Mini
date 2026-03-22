@@ -6,7 +6,7 @@ from src.database.neo4j_conn import Neo4jConn
 class DiagnoserService:
     def __init__(self, neo4j_conn: Neo4jConn):
         self.driver = neo4j_conn.connect()
-        self.llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.3, max_tokens=300)
+        self.llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.3, max_tokens=600)
 
     def _fetch_concept(self, topic: str) -> dict:
         with self.driver.session() as session:
@@ -21,9 +21,15 @@ class DiagnoserService:
             record = result.single()
             return dict(record) if record else {}
 
+    def fetch_concept_metadata(self, topic: str) -> dict:
+        """Public alias for concept fields from Neo4j (used by teaching / UI)."""
+        if not self.driver:
+            return {}
+        return self._fetch_concept(topic)
+
     def generate_question(self, topic: str) -> Question:
         concept = self._fetch_concept(topic)
-        structured_llm = self.llm.with_structured_output(Question)
+        structured_llm = self.llm.with_structured_output(Question, method="json_mode")
         
         prompt = ChatPromptTemplate.from_messages([
             ("system", """You are an expert engineering tutor generating assessment questions.
@@ -36,7 +42,10 @@ class DiagnoserService:
             Rules:
             - question must be specific to the concept, not generic
             - expected_answer must be a complete reference answer
-            - question_type must match chunk_type"""),
+            - question_type must match chunk_type
+            
+            Return ONLY a valid JSON object with these EXACT field names: 
+            "concept", "question_text", "question_type", "expected_answer"."""),
             ("human", """Concept: {topic}
             Description: {description}
             Chunk Type: {chunk_type}
@@ -57,7 +66,7 @@ class DiagnoserService:
         })
 
     def evaluate_answer(self, question: Question, student_answer: str) -> EvaluationResult:
-        structured_llm = self.llm.with_structured_output(EvaluationResult)
+        structured_llm = self.llm.with_structured_output(EvaluationResult, method="json_mode")
         
         prompt = ChatPromptTemplate.from_messages([
             ("system", """You are an expert engineering tutor evaluating a student's answer.
@@ -72,7 +81,9 @@ class DiagnoserService:
             Rules:
             - feedback must be specific and constructive
             - misconceptions must identify exact conceptual gaps
-            - be strict but fair"""),
+            - be strict but fair
+            
+            Return ONLY a valid JSON object matching the requested schema."""),
             ("human", """Concept: {concept}
             Question: {question_text}
             Expected Answer: {expected_answer}

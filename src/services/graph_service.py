@@ -35,13 +35,16 @@ class GraphService:
             
             # Create relationships
             existing_topics = [c.topic for c in concepts]
+            
             for concept in concepts:
                 # Part-Of first
                 session.execute_write(self._create_part_of_relationship, concept)
                 # Prerequisites
                 for prereq in concept.prerequisites:
+                    # Fuzzy match against existing topics
                     resolved = process.extractOne(prereq, existing_topics, scorer=fuzz.token_sort_ratio)
-                    if resolved and resolved[1] >= 70 and resolved[0] != concept.topic:
+                    # Relax from 70 to 60 to catch more variations (as per earlier fix)
+                    if resolved and resolved[1] >= 60 and resolved[0] != concept.topic:
                         session.execute_write(self._create_prerequisite_relationship, concept.topic, resolved[0])
 
     def build_graph_from_json(self, json_path: str):

@@ -33,32 +33,31 @@ class IntentService:
         return topics, np.array(embeddings)
 
     def _extract_intent(self, student_prompt: str) -> IntentOutput:
-        llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
-        structured_llm = llm.with_structured_output(IntentOutput)
+        llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0, max_tokens=200)
+        structured_llm = llm.with_structured_output(IntentOutput, method="json_mode")
         
         prompt = ChatPromptTemplate.from_messages([
             ("system", """You are an intent extractor for a learning system.
 
-Extract TWO things from the student message:
-1. known_topics: ONLY concepts the student EXPLICITLY says they know
-2. target_topics: ONLY concepts the student EXPLICITLY says they want to learn
+            Extract TWO things from the student message:
+            1. known_topics: Concepts the student EXPLICITLY says they know.
+            2. target_topics: Concepts the student EXPLICITLY says they want to learn.
 
-Rules:
-- Never extract vague terms like "basic amplifiers" or "circuits"
-- Always extract the most specific technical concept name possible
-- known_topics must be EXPLICITLY stated as known — never infer
-- target_topics must be EXPLICITLY stated as goals — never infer
-- "from scratch" or "everything" → return empty lists for both
-- "I don't understand X" → target: [X], known: []
-- Maximum 3 topics per list
+            Rules for Resolution:
+            - If a student mentions a broad term like "opams" or "transistors", resolve to the most fundamental "Gain" or "Basics" node for that component.
+            - Handle technical acronyms by expanding them where possible (e.g., "CMRR" -> "Common-Mode Rejection Ratio").
+            - known_topics must be EXPLICITLY stated as known — never infer.
+            - target_topics must be EXPLICITLY stated as goals — never infer.
+            - "from scratch" or "everything" → return empty lists for both.
+            - Maximum 3 topics per list.
 
-Examples:
-- "I know basic amplifiers" → known: ["differential amplifier", "inverting amplifier"], target: []
-- "I want to learn filters" → known: [], target: ["low pass filter"]
-- "I don't understand virtual ground" → known: [], target: ["virtual ground"]
-- "from scratch" → known: [], target: []
+            Examples:
+            - "I know basics of opams" → known: ["Op-Amp Gain"], target: []
+            - "I want to learn CMRR" → known: [], target: ["Common-Mode Rejection Ratio"]
+            - "I know BJT basics and want to learn beta" → known: ["Bipolar Junction Transistor"], target: ["Beta (B)"]
 
-Return empty lists only if truly not mentioned."""),
+            Return empty lists only if truly not mentioned.
+            Return ONLY a valid JSON object matching the requested schema."""),
             ("human", "{student_prompt}")
         ])
         
@@ -84,13 +83,21 @@ Return empty lists only if truly not mentioned."""),
         resolved_known = []
         for topic in raw_intent.known_topics:
             candidates = self._retrieve_candidates(topic)
-            resolved = self._rerank_candidates(topic, candidates)
-            if resolved: resolved_known.append(resolved)
+            resolved = self._rerank_candidates(topic, candidates, threshold=0.0)
+            # Cross-encoder scores can be negative for valid matches; if reranking rejects all,
+            # fall back to the most similar candidate from the embedding retriever.
+            if not resolved and candidates:
+                resolved = candidates[0]
+            if resolved:
+                resolved_known.append(resolved)
             
         resolved_targets = []
         for topic in raw_intent.target_topics:
             candidates = self._retrieve_candidates(topic)
-            resolved = self._rerank_candidates(topic, candidates)
-            if resolved: resolved_targets.append(resolved)
+            resolved = self._rerank_candidates(topic, candidates, threshold=0.0)
+            if not resolved and candidates:
+                resolved = candidates[0]
+            if resolved:
+                resolved_targets.append(resolved)
             
         return IntentOutput(known_topics=resolved_known, target_topics=resolved_targets)
