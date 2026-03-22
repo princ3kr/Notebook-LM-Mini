@@ -1,6 +1,7 @@
 # AI Learning Brain 🧠
 
-A sophisticated, personalized tutoring application that transforms technical PDF textbooks into interactive, graph-based learning experiences. Powered by **LangGraph**, **Groq LLMs**, and **Neo4j**.
+A personalized tutoring system that transforms technical PDF textbooks into an adaptive, graph-based learning experience. Upload a textbook chapter, and the system builds a knowledge graph, plans a learning path tailored to what you already know, teaches each concept, and quizzes you before moving forward.
+Powered by **LangGraph**, **Groq LLM**, **Neo4j**, and **sentence-transformers**.
 
 ## 🚀 Overview
 
