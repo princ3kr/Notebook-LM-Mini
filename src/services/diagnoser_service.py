@@ -83,7 +83,8 @@ class DiagnoserService:
             - misconceptions must identify exact conceptual gaps
             - be strict but fair
             
-            Return ONLY a valid JSON object matching the requested schema."""),
+            Return ONLY a valid JSON object with these EXACT field names:
+            "score", "feedback", "misconceptions" (must be a list of strings)."""),
             ("human", """Concept: {concept}
             Question: {question_text}
             Expected Answer: {expected_answer}
